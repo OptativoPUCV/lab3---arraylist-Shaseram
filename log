@@ -6,3 +6,14 @@ Wed 29 Mar 2023 02:43:22 AM UTC:
  tests:  0|6
 total_score: 0/70
 4c540cc
+Wed 29 Mar 2023 08:23:14 PM UTC: 
+ arraylist.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+arraylist.c: In function ‘createList’:
+arraylist.c:17:37: error: ‘*list.capacity’ may be used uninitialized [-Werror=maybe-uninitialized]
+   17 |   list->data = (void **) calloc(list->capacity, sizeof(void*));
+      |                                 ~~~~^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+127a9a5
