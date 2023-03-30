@@ -86,6 +86,9 @@ int get_size(ArrayList * l){
 
 //remove elements
 void clean(ArrayList * l){
-  free(l);
-  void *lis = createList();
+  l->size = 0;
+  l->capacity = 2;
+  free(l->data);
+  l->data = (void **) calloc(2,l->capacity * sizeof(void *));
+  return;
 }
