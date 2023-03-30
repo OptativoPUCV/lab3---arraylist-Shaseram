@@ -60,7 +60,21 @@ void* get(ArrayList * l, int i){
 }
 
 void* pop(ArrayList * l, int i){
-    return NULL;
+  void * auxilio = NULL;
+  int j = i;
+  if (i < 0)
+  {
+    auxilio = l->data[i+l->size];
+    j = i+l->size;
+  }
+  
+  for (int a = j ; a < l->size-1 ; a++)
+    {
+      l->data[a] = l->data[a+1];
+    }
+  l->size--;
+  
+    return auxilio;
 }
 
 
