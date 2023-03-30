@@ -63,12 +63,15 @@ void* pop(ArrayList * l, int i){
   if (l->size == 0) return NULL;
   
   void * auxilio = NULL;
+  
   int j = i;
   if (i < 0)
   {
     auxilio = l->data[i+l->size];
     j = i+l->size;
   }
+  
+  auxilio = l->data[i];
   
   for (int a = j ; a < l->size-1 ; a++)
     {
@@ -90,5 +93,6 @@ void clean(ArrayList * l){
   l->capacity = 2;
   free(l->data);
   l->data = (void **) calloc(2,l->capacity * sizeof(void *));
+  
   return;
 }
