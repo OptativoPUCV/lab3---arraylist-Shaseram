@@ -60,6 +60,8 @@ void* get(ArrayList * l, int i){
 }
 
 void* pop(ArrayList * l, int i){
+  if (l->size == 0) return NULL;
+  
   void * auxilio = NULL;
   int j = i;
   if (i < 0)
